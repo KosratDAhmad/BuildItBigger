@@ -1,4 +1,4 @@
-package com.example.android.mylibrary;
+package com.example.android.androidlib;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

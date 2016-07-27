@@ -1,4 +1,4 @@
-package com.example.android.mylibrary;
+package com.example.android.androidlib;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 public class JokeActivity extends AppCompatActivity {
 
-    public static final String JOKE_KEY = "joke";
+    public static final String JOKE_KEY = "com.example.android.androidlib.JOKE";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

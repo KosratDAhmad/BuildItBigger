@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.JokeTeller;
-import com.example.android.mylibrary.JokeActivity;
+import com.example.android.androidlib.JokeActivity;
 
 
 public class MainActivity extends ActionBarActivity {
