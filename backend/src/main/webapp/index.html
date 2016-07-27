@@ -70,7 +70,7 @@
     function enableClick() {
       document.getElementById('helloButton').onclick = function() {
         var name = document.getElementById('nameInput').value;
-        gapi.client.myApi.sayHi({'name': name}).execute(
+        gapi.client.myApi.getJokeFromLib().execute(
           function(response) {
             var outputAlertDiv = document.getElementById('outputAlert');
             outputAlertDiv.style.visibility = 'visible';
