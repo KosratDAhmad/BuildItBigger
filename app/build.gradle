@@ -22,6 +22,14 @@ android {
     dexOptions {
         javaMaxHeapSize "2g"
     }
+    productFlavors{
+        free{
+            applicationId "com.udacity.gradle.builditbigger.free"
+        }
+        paid{
+            applicationId "com.udacity.gradle.builditbigger.paid"
+        }
+    }
 }
 
 dependencies {
@@ -30,7 +38,7 @@ dependencies {
     compile project(":javalib")
     compile project(":androidlib")
     compile 'com.android.support:appcompat-v7:24.1.1'
-    compile 'com.google.android.gms:play-services:9.2.1'
+    freeCompile 'com.google.android.gms:play-services:9.2.1'
     compile project(path: ':backend', configuration: 'android-endpoints')
     testCompile 'junit:junit:4.12'
 }
