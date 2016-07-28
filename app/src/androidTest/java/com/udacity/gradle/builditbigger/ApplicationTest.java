@@ -14,8 +14,13 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
     }
 
     public void testFetchJokeTask() throws ExecutionException, InterruptedException {
-        MainActivity.EndpointsAsyncTask testJoke = new MainActivity.EndpointsAsyncTask();
-        testJoke.execute(getApplication());
+        FetchJokeTask testJoke = new FetchJokeTask(new FetchJokeTask.Callback() {
+            @Override
+            public void onFinished(String result) {
+
+            }
+        });
+        testJoke.execute();
         String joke = testJoke.get();
 //        Log.i("test", "testFetchJokeTask: " + joke);
         assertNotNull(joke);
