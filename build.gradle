@@ -17,3 +17,34 @@ allprojects {
         jcenter()
     }
 }
+
+task gcetest {
+    dependsOn = ["app:connectedAndroidTest", "startbackend", "shutdownbackend"]
+    doLast {
+        println "KMM gcetest"
+    }
+}
+
+evaluationDependsOn ":backend"
+project(":backend"){
+    appengine{
+        daemon true
+    }
+}
+
+task startbackend {
+    dependsOn = [":backend:appengineRun"]
+    doLast {
+        println "KMM startbackend"
+    }
+}
+
+task shutdownbackend {
+    dependsOn = [":backend:appengineStop"]
+    mustRunAfter "app:connectedAndroidTest"
+    doLast {
+        println "KMM shutdownbackend"
+    }
+}
+
+gcetest.mustRunAfter startbackend
